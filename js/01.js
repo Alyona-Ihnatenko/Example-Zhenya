@@ -4,13 +4,22 @@
 //Сделайте так, чтобы при клике на каждый li, ему в конец добавлялся '!'.
 //Это должно работать и для вновь добавленных li.Задачу решите с помощью 
 //делегирования(то есть событие должно быть навешано на ul) Показывал, попробывать вспомнить
+const button=document.querySelector('.btn');
 const list=document.querySelector('.list');
-const item=document.querySelector('.item');
 
-list.addEventListener('click',addItem)
+button.addEventListener('click',addItem);
 
-function addItem(event){
-event.currentTarget.createElement('li');
+function addItem(){
 
+const addItem=document.createElement('li');
+addItem.textContent='Женя'; 
+list.appendChild(addItem);
 
+}
+
+list.addEventListener('click',addSign)
+
+function addSign(event){
+event.target.textContent= event.target.textContent
++'!';
 }
